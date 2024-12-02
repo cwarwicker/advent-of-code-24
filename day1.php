@@ -1005,16 +1005,16 @@ INPUT;
 $data = explode("\n",$input);
 $cols = [[],[]];
 foreach($data as $line){
-$split = explode(" ",$line);
-$cols[0][] = (int)$split[0];
-$cols[1][] = (int)$split[1];
+  $split = explode(" ",$line);
+  $cols[0][] = (int)$split[0];
+  $cols[1][] = (int)$split[1];
 }
 
 array_walk($cols, 'sort');
 
 $distances = [];
 for($i = 0; $i < count($cols[0]); $i++){
-$distances[] = abs($cols[0][$i] - $cols[1][$i]);
+  $distances[] = abs($cols[0][$i] - $cols[1][$i]);
 }
 
 $total = array_sum($distances);
